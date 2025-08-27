@@ -14,10 +14,8 @@ export default function Progress() {
           <h2 className="text-xl">Your Progress</h2>
         </div>
         <div className="flex justify-center w-full mt-4 space-x-2">
-          {Array.from({ length: 4 }, () => (
-            <div key={length} className="rounded-full w-10 h-10 border-[var(--accent-clr)] border-4">
-              
-            </div>
+          {Array.from({ length: 4, }, (_, i) => (
+            <div key={i} className="rounded-full w-10 h-10 border-[var(--accent-clr)] border-4"></div>
           ))}
         </div>
         <div className="flex space-x-15 justify-center mt-4 w-full ">

@@ -13,8 +13,9 @@ export default function Category() {
           <h1 className="text-l">Your Workouts</h1>
         </div>
         <div className="flex w-full overflow-scroll gap-2 mt-2">
-          {Array.from({ length: 4 }, () => (
+          {Array.from({ length: 4 }, (_, i) => (
             <motion.div
+            key={i}
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{

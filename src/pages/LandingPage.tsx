@@ -76,6 +76,7 @@ export default function LandingPage() {
             onLoad={() => setLoaded(true)}
           />
         </AnimatePresence>
+        {loaded}
       </div>
 
       {/* Text & Button */}

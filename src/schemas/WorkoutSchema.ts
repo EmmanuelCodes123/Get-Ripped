@@ -1,6 +1,6 @@
-import z from "zod";
+// import z from "zod";
 
-const WorkoutSchema = z.object({
-    name: z.string,
+// const WorkoutSchema = z.object({
+//     name: z.string,
     
-})
+// })
