@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --primary-clr: #1e1e1e;
+  --primary-text-clr: #f97316;
+  --secondary-clr: rgb(20, 184, 166);
+  --accent-clr: #2a2a2a;
+}
+
+@layer base {
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+  }
+  body {
+    font-family: "Roboto Slab", serif;
+  }
+  h2,
+  p, h1 {
+    color: #f3f4f6;
+    font-weight: bold;
+  }
+ 
+    /* background: linear-gradient(90deg, var(--text-clr1), var(--text-clr2));
+    -webkit-background-clip: text; 
+    background-clip: text;  */
+    
+}
+@keyframes slide-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right 0.8s infinite;
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px rgb(86, 82, 82);
+    color: text-shadow-black;
+  }
+
+  .hover\:text-stroke-red:hover {
+    -webkit-text-stroke: 1px #3e4a48;
+  }
+
+  .hover\:text-stroke-2:hover {
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .btnBg {
+    background-color: var(--primary-text-clr);
+  }
+  .secBtnBg {
+    background-color: var(--secondary-clr);
+  }
+
+  .background {
+    background-color: #b5b3a7;
+  }
+  .brdCustom {
+    border: 2px solid #b98e6f;
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background: #121212;
+  }
+}
