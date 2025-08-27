@@ -9,8 +9,8 @@ export default function Navbar() {
         </div>
         <div>
             {/* reduce long text */}
-          <h1 className="text-xl overflow-auto text-[var(--primary-text-clr)]"> Ezuma Emmanuel</h1>
-          <p className="text-[var(--primary-text-clr)]">Get Ready 🔥</p>
+          <h1 className="text-xl overflow-auto "> Ezuma Emmanuel</h1>
+          <p>Get Ready 🔥</p>
         </div>
       </div>
       

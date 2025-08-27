@@ -32,13 +32,13 @@ export default function Footer() {
             ref={footerRef}
           >
             <button>
-              <Settings size={40} />
+              <Settings size={40} color="var(--icons-clr)" />
             </button>
-            <button className="rounded-full w-[68px] h-[68px] flex justify-center items-center secBtnBg shadow-[0_0_20px_10px_rgb(20, 184, 166)]">
+            <button className="rounded-full w-[68px] h-[68px] flex justify-center items-center secBtnBg shadow-[0_0_20px_10px_var(--secondary-clr)]">
               <Plus size={40} />
             </button>
             <button>
-              <Moon size={40} />
+              <Moon size={40} color="var(--icons-clr)"/>
             </button>
           </motion.div>
         )}

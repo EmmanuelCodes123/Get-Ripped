@@ -2,10 +2,11 @@
 @import "tailwindcss";
 
 :root {
-  --primary-clr: #1e1e1e;
-  --primary-text-clr: #f97316;
-  --secondary-clr: rgb(20, 184, 166);
+  --primary-clr: #d3cbc8;
+  --primary-text-clr: #7f7e7b;
+  --secondary-clr: #c2bdbb;
   --accent-clr: #2a2a2a;
+  --icons-clr: rgb(0, 0, 0)
 }
 
 @layer base {
@@ -19,7 +20,7 @@
   }
   h2,
   p, h1 {
-    color: #f3f4f6;
+    color: black;
     font-weight: bold;
   }
  
@@ -73,6 +74,6 @@
 
 @layer utilities {
   .gradient-brand {
-    background: #121212;
+    background: #ebeaea;
   }
 }
