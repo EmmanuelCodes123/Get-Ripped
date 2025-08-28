@@ -1,10 +1,12 @@
 import { ChevronLeft, ChevronRight, Moon, Plus, Settings } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAppContext } from "../../hooks/useAppContext";
 
 export default function Footer() {
   const [showFooter, setShowFooter] = useState(false);
   const footerRef = useRef<HTMLDivElement>(null);
+  const {setShowPopup, setShowSettings} = useAppContext()
 
   useEffect(() => {
     function handleSetFooter(e: MouseEvent) {
@@ -32,9 +34,9 @@ export default function Footer() {
             ref={footerRef}
           >
             <button>
-              <Settings size={40} color="var(--icons-clr)" />
+              <Settings size={40} color="var(--icons-clr)" onClick={() => setShowSettings(true)}/>
             </button>
-            <button className="rounded-full w-[68px] h-[68px] flex justify-center items-center secBtnBg shadow-[0_0_20px_10px_var(--secondary-clr)]">
+            <button className="rounded-full w-[68px] h-[68px] flex justify-center items-center secBtnBg shadow-[0_0_20px_10px_var(--secondary-clr)]" onClick={() => setShowPopup(true)}>
               <Plus size={40} />
             </button>
             <button>

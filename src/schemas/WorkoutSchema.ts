@@ -36,5 +36,5 @@ export const WorkoutFormSchema = z.object({
   rating: z.enum(ratings),
 });
 
-export type Workout = z.infer<typeof WorkoutSchema>;
-export type WorkoutForm = z.infer<typeof WorkoutFormSchema[]>;
+export type WorkoutType = z.infer<typeof WorkoutSchema[]>;
+export type WorkoutFormType = z.infer<typeof WorkoutFormSchema>;
