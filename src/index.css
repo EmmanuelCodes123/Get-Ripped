@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 :root {
-  --primary-clr: #d3cbc8;
-  --primary-text-clr: #7f7e7b;
-  --secondary-clr: #c2bdbb;
+  --primary-clr: #3e66f7;
+  --primary-text-clr: #0c3df0;
+  --secondary-clr: #6f8eff;
   --accent-clr: #2a2a2a;
-  --icons-clr: rgb(0, 0, 0)
+  --icons-clr: rgb(180, 188, 221)
 }
 
 @layer base {
@@ -20,7 +20,7 @@
   }
   h2,
   p, h1 {
-    color: black;
+    color: rgb(180, 188, 221);
     font-weight: bold;
   }
  
@@ -65,7 +65,7 @@
   }
 
   .background {
-    background-color: #b5b3a7;
+    background-color: #a79533;
   }
   .brdCustom {
     border: 2px solid #b98e6f;
@@ -74,6 +74,6 @@
 
 @layer utilities {
   .gradient-brand {
-    background: #ebeaea;
+    background-image: url("/src/assets/neon bg.jpg");
   }
 }

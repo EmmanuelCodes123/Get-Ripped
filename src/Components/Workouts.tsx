@@ -51,13 +51,13 @@ export default function Workouts() {
               ref={optionsRef}
             >
               <button>
-                <Edit size={30} />
+                <Edit size={30} color="var(--icons-clr)"/>
               </button>
               <button className="rounded-full w-20 h-20 flex justify-center items-center secBtnBg ">
                 <Play size={30} />
               </button>
               <button>
-                <Delete size={30} />
+                <Delete size={30} color="var(--icons-clr)" />
               </button>
             </motion.div>
           )}
