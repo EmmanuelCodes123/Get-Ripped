@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import DefaultPath from "./lib/DefualtPath";
 import UseProvider from "./hooks/useProvider";
-import AuthForm from "./Components/Creating Workout/AuthForn";
+import AuthForm from "./Components/Creating Workout/AuthForm";
 
 function App() {
   return (

@@ -3,7 +3,12 @@ import bgImg from "../assets/bgimg.jpg";
 import { Clock, Delete, Edit, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Workouts() {
+type WorkoutProps = {
+  title: string,
+  rating: string | undefined,
+  totalTime: number
+}
+export default function Workout({title, rating, totalTime}: WorkoutProps) {
   const [showOptions, setShowOptions] = useState(false);
   const optionsRef = useRef<HTMLDivElement>(null);
 
@@ -32,12 +37,12 @@ export default function Workouts() {
           <img src={bgImg} alt="" />
         </div>
         <div className="p-2 bg-[#f9e6d079] w-fit rounded-full absolute top-3 left-3">
-          <h4 className="text-xs">Intermediate</h4>
+          <h4 className="text-xs">{rating}</h4>
         </div>
         <div className="mt-1">
-          <h2>Calistenics Push Workout</h2>
+          <h2>{title}</h2>
           <p className="flex gap-1 text-sm items-center">
-            <Clock /> 45 mins
+            <Clock /> {totalTime} mins
           </p>
         </div>
         <AnimatePresence>
@@ -51,7 +56,7 @@ export default function Workouts() {
               ref={optionsRef}
             >
               <button>
-                <Edit size={30} color="var(--icons-clr)"/>
+                <Edit size={30} color="var(--icons-clr)" />
               </button>
               <button className="rounded-full w-20 h-20 flex justify-center items-center secBtnBg ">
                 <Play size={30} />

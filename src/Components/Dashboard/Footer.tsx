@@ -6,7 +6,7 @@ import { useAppContext } from "../../hooks/useAppContext";
 export default function Footer() {
   const [showFooter, setShowFooter] = useState(false);
   const footerRef = useRef<HTMLDivElement>(null);
-  const {setShowPopup, setShowSettings} = useAppContext()
+  const { setShowPopup, setShowSettings } = useAppContext();
 
   useEffect(() => {
     function handleSetFooter(e: MouseEvent) {
@@ -20,7 +20,7 @@ export default function Footer() {
       document.addEventListener("mousedown", handleSetFooter);
     };
   });
-  
+
   return (
     <footer className="w-full fixed bottom-2 left-0">
       <AnimatePresence>
@@ -32,15 +32,26 @@ export default function Footer() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="w-full flex justify-around"
             ref={footerRef}
+            
           >
             <button>
-              <Settings size={40} color="var(--icons-clr)" onClick={() => setShowSettings(true)}/>
+              <Settings
+                size={40}
+                color="var(--icons-clr)"
+                onClick={() => setShowSettings(true)}
+              />
             </button>
-            <button className="rounded-full w-[68px] h-[68px] flex justify-center items-center secBtnBg shadow-[0_0_20px_10px_var(--secondary-clr)]" onClick={() => setShowPopup(true)}>
+            <button
+              className="rounded-full w-[68px] h-[68px] flex justify-center items-center secBtnBg shadow-[0_0_20px_10px_var(--secondary-clr)]"
+              onClick={() => {
+                setShowPopup(true);
+                setShowFooter(false);
+              }}
+            >
               <Plus size={40} />
             </button>
             <button>
-              <Moon size={40} color="var(--icons-clr)"/>
+              <Moon size={40} color="var(--icons-clr)" />
             </button>
           </motion.div>
         )}

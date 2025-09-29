@@ -1,8 +1,11 @@
-import Workouts from "../Workouts";
+import { useAppContext } from "@/hooks/useAppContext";
+import Workout from "../Workouts";
 import SelectCategory from "./SelectCategory";
 import { motion } from "framer-motion";
 
 export default function Category() {
+  const { workouts } = useAppContext();
+
   return (
     <>
       <div>
@@ -13,9 +16,9 @@ export default function Category() {
           <h1 className="text-l">Your Workouts</h1>
         </div>
         <div className="flex w-full overflow-scroll gap-2 mt-2">
-          {Array.from({ length: 4 }, (_, i) => (
+          {workouts.map(workout => (
             <motion.div
-            key={i}
+              key={workout.title}
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
@@ -24,12 +27,11 @@ export default function Category() {
                 delay: length + 0.5,
               }}
             >
-              <Workouts />
+              <Workout title={workout.title} rating={workout.rating} totalTime={workout.total_mins} />
             </motion.div>
           ))}
         </div>
       </div>
-      {/* Add an expanding animation to the top */}
     </>
   );
 }

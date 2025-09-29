@@ -1,7 +1,7 @@
 import type React from "react";
 import { AppContext } from "./useAppContext";
 import { useRef, useState } from "react";
-import type { WorkoutType } from "../schemas/WorkoutSchema";
+import type { ExerciseType, WorkoutType } from "../schemas/WorkoutSchema";
 
 export default function UseProvider({
   children,
@@ -9,9 +9,11 @@ export default function UseProvider({
   children: React.ReactNode;
 }) {
   const [showPopup, setShowPopup] = useState(false);
-  const [workouts, setWorkouts] = useState<WorkoutType>([]);
+  const [exercises, setExercises] = useState<ExerciseType[]>([]);
+  const [workouts, setWorkouts] = useState<WorkoutType[]>([])
   const [noOfDays, setNoOfDays] = useState(3);
   const [showSettings, setShowSettings] = useState(false);
+  const [bodyPart, setBodyPart] = useState("arm");
   const progressRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -19,13 +21,17 @@ export default function UseProvider({
       value={{
         showPopup,
         setShowPopup,
-        workouts,
-        setWorkouts,
+        exercises,
+        setExercises,
         noOfDays,
         setNoOfDays,
         showSettings,
         setShowSettings,
-        progressRef
+        progressRef,
+        setBodyPart,
+        bodyPart,
+        workouts,
+        setWorkouts
       }}
     >
       {children}

@@ -18,6 +18,7 @@
   --accent-clr: #2a2a2a;
   --icons-clr: rgb(0, 0, 0);
   --bdr-clr: black;
+  --input-box: white;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -66,6 +67,14 @@
     color: black;
     font-weight: bold;
   }
+  .input{
+    border: 2px solid var(--bdr-clr);
+    background-color: var(--input-box);
+    color: black;
+    font-weight: bold;
+    border-radius: 7px;
+    height: 23rem;
+  }
 
     /* background: linear-gradient(90deg, var(--text-clr1), var(--text-clr2));
     -webkit-background-clip: text; 
@@ -112,6 +121,14 @@
   }
   .brdCustom {
     border: 2px solid #b98e6f;
+  }
+  .input{
+    border: 1px solid var(--bdr-clr);
+    background-color: var(--input-box);
+    color: black;
+    font-weight: bold;
+    border-radius: 7px;
+    height: 2.8rem;
   }
 }
 

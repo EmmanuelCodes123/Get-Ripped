@@ -3,7 +3,8 @@ import { useAppContext } from "../../hooks/useAppContext";
 import { useNavigate } from "react-router-dom";
 
 export default function PopUp() {
-  const { setShowPopup } = useAppContext();
+  const { setShowPopup, setBodyPart } = useAppContext();
+
   const navigate = useNavigate();
 
   const bodyParts = [
@@ -13,6 +14,16 @@ export default function PopUp() {
     { name: "Legs", icon: "🦵" },
     { name: "Abs", icon: "🤸" },
   ];
+
+  function handleSelect(part: string) {
+  const normalized = part.toLowerCase();
+
+  setShowPopup(false);
+  setBodyPart(normalized);
+
+  navigate(`/create-workout?part=${normalized}`);
+}
+
 
   return (
     <AnimatePresence>
@@ -38,10 +49,7 @@ export default function PopUp() {
               <div
                 key={part.name}
                 className="flex flex-col items-center"
-                onClick={() => {
-                  navigate("/create-workout");
-                  setShowPopup(false);
-                }}
+                onClick={() => handleSelect(part.name)}
               >
                 <div className="w-16 h-16 bg-gray-200 rounded-full flex justify-center items-center text-2xl">
                   {part.icon}
