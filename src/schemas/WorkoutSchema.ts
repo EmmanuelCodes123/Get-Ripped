@@ -1,5 +1,5 @@
 import { ratings } from "@/lib/constants";
-import z from "zod";
+import z, { number } from "zod";
 
 const ExerciseSchema = z.object({
   name: z.string().min(3, "Exercise name should be at least 3 characters long"),
@@ -16,6 +16,7 @@ export const WorkoutSchema = z.object({
   total_mins: z.number(),
   total_secs: z.number(),
   rating: z.enum(ratings).optional(),
+  id: number().optional(),
 });
 
 export const WorkoutFormSchema = WorkoutSchema; // same rules for form

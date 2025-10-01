@@ -9,12 +9,13 @@ import { useMemo } from "react";
 import generatePremaidExercise from "@/lib/generatePremaidExercise";
 import { useAppContext } from "@/hooks/useAppContext";
 import { useNavigate } from "react-router-dom";
+import generateId from "@/lib/generateId";
 
 export default function AuthForm() {
   const form = useForm<WorkoutFormType>({
     resolver: zodResolver(WorkoutFormSchema),
     defaultValues: {
-      title: "",
+      title: "Arm",
       total_mins: 0,
       total_secs: 0,
       exercises: generatePremaidExercise(),
@@ -53,6 +54,7 @@ export default function AuthForm() {
 
   function onSubmit(values: WorkoutFormType) {
     console.log("Workout Submitted:", values);
+    values.id = generateId()
     setWorkouts((prev) => [...prev, values]);
     navigate("/");
   }

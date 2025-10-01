@@ -4,11 +4,19 @@ import { Clock, Delete, Edit, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type WorkoutProps = {
-  title: string,
-  rating: string | undefined,
-  totalTime: number
-}
-export default function Workout({title, rating, totalTime}: WorkoutProps) {
+  title: string;
+  rating: string | undefined;
+  totalTime: number;
+  onDelete: (id: number) => void;
+  id?: number;
+};
+export default function Workout({
+  title,
+  rating,
+  totalTime,
+  onDelete,
+  id,
+}: WorkoutProps) {
   const [showOptions, setShowOptions] = useState(false);
   const optionsRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +69,7 @@ export default function Workout({title, rating, totalTime}: WorkoutProps) {
               <button className="rounded-full w-20 h-20 flex justify-center items-center secBtnBg ">
                 <Play size={30} />
               </button>
-              <button>
+              <button onClick={() => onDelete(id ? id : 0)}>
                 <Delete size={30} color="var(--icons-clr)" />
               </button>
             </motion.div>
